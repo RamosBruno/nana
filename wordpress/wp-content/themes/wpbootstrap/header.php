@@ -28,7 +28,7 @@
             <div class="nav-collapse collapse">
                 <ul class="nav">
 
-                    <?php wp_nav_menu(array('theme_location' => 'header')); ?>
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
 
                 </ul>
             </div><!--/.nav-collapse -->
