@@ -13,23 +13,17 @@
 
     <?php wp_enqueue_script("jquery"); ?>
     <?php wp_head(); ?>
+    <?php include 'wp_bootstrap_navwalker.php' ?>
 </head>
 <body>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
             <a class="brand" href="<?php echo site_url(); ?>"><?php bloginfo('name'); ?></a>
             <div class="nav-collapse collapse">
-                <ul class="nav">
-
-                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav' ) ); ?>
-
+                <ul class="nav navbar-static">
+                    <?php wp_nav_menu(array('menu_class'=>'nav navbar-nav navbar-left', 'container_id' => 'bs-example-navbar-collapse-1', 'menu_id'=>'navbar', 'fallback_cb' => 'wp_bootstrap_navwalker::fallback', 'walker' => new wp_bootstrap_navwalker())); ?>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
